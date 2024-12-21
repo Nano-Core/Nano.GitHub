@@ -3,7 +3,7 @@ Nano requires a private NuGet server, to publish application dependencies for se
 
 ***
 
-### Setup
+### Configuration
 To setup private NuGet packages on GitHub, follow the documentation here:  
 * https://docs.github.com/en/packages/working-with-a-github-packages-registry/working-with-the-nuget-registry
 
