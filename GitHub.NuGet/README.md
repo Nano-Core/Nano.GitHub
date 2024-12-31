@@ -10,7 +10,7 @@ To setup private NuGet packages on GitHub, follow the documentation here:
 The environmental variables needed for Nano are the following:
 * NUGET_HOST: https://nuget.pkg.github.com/{{org-name}}/index.json
 * NUGET_APIKEY: GitHub PAT Token
-* NUGET_USERNAME:  GitHub Username (for PAT Token)
+* NUGET_USERNAME: GitHub Username (for PAT Token)
 * NUGET_PASSWORD: GitHub PAT Token (same as NUGET_APIKEY)
 
 ***
