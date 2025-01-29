@@ -11,7 +11,7 @@ The environmental variables needed for Nano are the following:
 * CONTAINER_REGISTRY_HOST: 'ghcr.io/{{org-name }}' // Lowercase.
 * CONTAINER_REGISTRY_USERNAME: GitHub Username (for PAT Token)
 * CONTAINER_REGISTRY_PASSWORD: GitHub PAT Token
-* CONTAINER_REGISTRY_SOURCE_LABEL: https://github.com/{{org-name}}/{{image-name}}
+* CONTAINER_REGISTRY_SOURCE_LABEL: https://github.com/{{org-name}}/{{image-name}}  
 The HOST must be created as a GitHub variable, and USERNAME and PASSWORD must be created and GitHub secrets.  
 Also, The HOST, USERNAME and PASSWORD are needed later when deploying Kubernetes, so make a note of them.  
 
