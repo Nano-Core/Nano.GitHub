@@ -12,6 +12,7 @@ The environmental variables needed for Nano are the following:
 * CONTAINER_REGISTRY_USERNAME: GitHub Username (for PAT Token)
 * CONTAINER_REGISTRY_PASSWORD: GitHub PAT Token
 * CONTAINER_REGISTRY_SOURCE_LABEL: https://github.com/{{org-name}}/{{image-name}}
+The Host, Username and Paswword will also be needed later, when deploying Kubernetes, so make a note of them.  
 
 **NOTE:** It's also possible to use ```{{ Github.actor}}``` as username and ```{{ Github.GITHUB_TOKEN }}``` as Password, but it the repository must be manually linked with the package on GitHub.  
 
