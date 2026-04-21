@@ -16,6 +16,7 @@ The environmental variables needed for Nano are the following:
 The HOST must be created as a GitHub variable, and USERNAME and PASSWORD must be created and GitHub secrets.  
 Also, The HOST, USERNAME and PASSWORD are needed later when deploying Kubernetes, so make a note of them.  
 
-**NOTE:** It's also possible to use ```{{ Github.actor}}``` as username and ```{{ Github.GITHUB_TOKEN }}``` as Password, but it the repository must be manually linked with the package on GitHub.  
+**NOTE:** It's also possible to use `{{ Github.actor}}` as username and `{{ Github.GITHUB_TOKEN }}` as Password, but it the repository must be manually 
+linked with the package on GitHub.  
 
 ***
