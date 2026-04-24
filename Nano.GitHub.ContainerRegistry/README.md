@@ -1,22 +1,36 @@
 # Nano.GitHub.ContainerRegistry
-Nano requires a container registry server, to publish cotaniner images for applications.  
+
+> _Private container registry setup and configuration._
 
 ***
 
-### Configuration
-To setup private container registry on GitHub, follow the documentation here:  
-* https://docs.github.com/en/packages/working-with-a-github-packages-registry/working-with-the-container-registry
+## Table of Contents
+* **[Summary](#summary)**
+* **[Configuration](#configuration)**
 
-The environmental variables needed for Nano are the following:
-* CONTAINER_REGISTRY_HOST: 'ghcr.io/{{org-name }}' // Lowercase.
-* CONTAINER_REGISTRY_USERNAME: GitHub Username (for PAT Token)
-* CONTAINER_REGISTRY_PASSWORD: GitHub PAT Token
-* CONTAINER_REGISTRY_SOURCE_LABEL: https://github.com/{{org-name}}/{{image-name}}  
+## Summary
+Nano requires a container registry to publish container images for applications and services. This enables consistent distribution and deployment of containerized 
+workloads across environments.  
 
-The HOST must be created as a GitHub variable, and USERNAME and PASSWORD must be created and GitHub secrets.  
-Also, The HOST, USERNAME and PASSWORD are needed later when deploying Kubernetes, so make a note of them.  
+## Configuration
+To configure a private container registry using GitHub, follow the **[official documentation](https://docs.github.com/en/packages/working-with-a-github-packages-registry/working-with-the-container-registry)**.  
+  
+Nano requires the following environment variables for deploying application and infrastructure containers.  
 
-**NOTE:** It's also possible to use `{{ Github.actor}}` as username and `{{ Github.GITHUB_TOKEN }}` as Password, but it the repository must be manually 
-linked with the package on GitHub.  
+| Variable                          | Value                                              | Description                                            |
+| --------------------------------- |--------------------------------------------------- | ------------------------------------------------------ |
+| `CONTAINER_REGISTRY_HOST`         | `ghcr.io/{{org-name}}`                             | GitHub Container Registry host (must be lowercase).    |
+| `CONTAINER_REGISTRY_USERNAME`     | `your-github-username`                             | GitHub username associated with the PAT.               |
+| `CONTAINER_REGISTRY_PASSWORD`     | `ghp_xxxxxxxxxxxxxxxxxxxx`                         | GitHub Personal Access Token (PAT).                    |
+| `CONTAINER_REGISTRY_SOURCE_LABEL` | `https://github.com/{{org-name}}/{{image-name}}`   | Source repository reference for the container image.   |
 
-***
+> ⚠️ These values are also required during Kubernetes deployment. Ensure they are recorded securely and made available to deployment pipelines.
+
+It is also possible to use GitHub Actions built-in authentication:
+
+| Option      | Value                           |
+| ----------- | ------------------------------- |
+| Username    | `${{ github.actor }}`           |
+| Password    | `${{ secrets.GITHUB_TOKEN }}`   |
+
+> ⚠️ When using this approach, the repository must be explicitly linked to the container package on GitHub using `CONTAINER_REGISTRY_SOURCE_LABEL` for proper access control.
