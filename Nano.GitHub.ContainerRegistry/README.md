@@ -15,14 +15,13 @@ workloads across environments.
 ## Configuration
 To configure a private container registry using GitHub, follow the **[official documentation](https://docs.github.com/en/packages/working-with-a-github-packages-registry/working-with-the-container-registry)**.  
   
-Nano requires the following environment variables for deploying application and infrastructure containers.  
+Nano requires the following organization secrets for deploying application and infrastructure containers.  
 
-| Variable                          | Value                                              | Description                                            |
-| --------------------------------- |--------------------------------------------------- | ------------------------------------------------------ |
-| `CONTAINER_REGISTRY_HOST`         | `ghcr.io/{{org-name}}`                             | GitHub Container Registry host (must be lowercase).    |
-| `CONTAINER_REGISTRY_USERNAME`     | `your-github-username`                             | GitHub username associated with the PAT.               |
-| `CONTAINER_REGISTRY_PASSWORD`     | `ghp_xxxxxxxxxxxxxxxxxxxx`                         | GitHub Personal Access Token (PAT).                    |
-| `CONTAINER_REGISTRY_SOURCE_LABEL` | `https://github.com/{{org-name}}/{{image-name}}`   | Source repository reference for the container image.   |
+| Variable                          | Type     | Value                      | Description                                            |
+| --------------------------------- |--------- | -------------------------- | ------------------------------------------------------ |
+| `CONTAINER_REGISTRY_HOST`         | secrets  | `ghcr.io/{{org-name}}`     | GitHub Container Registry host (must be lowercase).    |
+| `CONTAINER_REGISTRY_USERNAME`     | secrets  |`your-github-username`      | GitHub username associated with the PAT.               |
+| `CONTAINER_REGISTRY_PASSWORD`     | secrets  |`ghp_xxxxxxxxxxxxxxxxxxxx`  | GitHub Personal Access Token (PAT).                    |
 
 > ⚠️ These values are also required during Kubernetes deployment. Ensure they are recorded securely and made available to deployment pipelines.
 

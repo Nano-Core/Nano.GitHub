@@ -17,12 +17,12 @@ proprietary components.
 ## Configuration
 To configure private NuGet package hosting using GitHub Packages, follow the **[official documentation](https://docs.github.com/en/packages/working-with-a-github-packages-registry/working-with-the-nuget-registry)**.  
 
-Nano requires the following environment variables to be defined for applications publishing NuGet packages.  
+Nano requires the following organization secrets to be defined for applications publishing NuGet packages.  
 
-| Variable         | Value                                                    | Description                                      |
-| ---------------- | -------------------------------------------------------- |------------------------------------------------- |
-| `NUGET_HOST`     | `https://nuget.pkg.github.com/{{org-name}}/index.json`   | URL to the GitHub NuGet package registry         |
-| `NUGET_APIKEY`   | `ghp_xxxxxxxxxxxxxxxxxxxx`                               | GitHub Personal Access Token (PAT)               |
-| `NUGET_USERNAME` | `your-github-username`                                   | GitHub username associated with the PAT          |
+| Variable         | Type     | Value                                                    | Description                                      |
+| ---------------- | -------- | -------------------------------------------------------- |------------------------------------------------- |
+| `NUGET_HOST`     | secrets  | `https://nuget.pkg.github.com/{{org-name}}/index.json`   | URL to the GitHub NuGet package registry         |
+| `NUGET_APIKEY`   | secrets  | `ghp_xxxxxxxxxxxxxxxxxxxx`                               | GitHub Personal Access Token (PAT)               |
+| `NUGET_USERNAME` | secrets  | `your-github-username`                                   | GitHub username associated with the PAT          |
 
 All variables must be configured as GitHub repository or organization secrets.  
