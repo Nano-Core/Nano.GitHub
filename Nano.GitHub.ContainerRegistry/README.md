@@ -13,23 +13,11 @@ Nano requires a container registry to publish container images for applications 
 workloads across environments.  
 
 ## Configuration
-To configure a private container registry using GitHub, follow the **[official documentation](https://docs.github.com/en/packages/working-with-a-github-packages-registry/working-with-the-container-registry)**.  
-  
-Nano requires the following organization secrets for deploying application and infrastructure containers.  
+Private container image hosting with GitHub Container Registry (GHCR) works out of the box when using GitHub Actions and the built-in `GITHUB_TOKEN`, which provides the required 
+authentication for both publishing and consuming images within your organization. For additional details on authentication flows and supported scenarios, see the 
+**[official documentation](https://docs.github.com/en/packages/working-with-a-github-packages-registry/working-with-the-container-registry)**.
 
-| Variable                          | Type     | Value                      | Description                                            |
-| --------------------------------- |--------- | -------------------------- | ------------------------------------------------------ |
-| `CONTAINER_REGISTRY_HOST`         | secrets  | `ghcr.io/{{org-name}}`     | GitHub Container Registry host (must be lowercase).    |
-| `CONTAINER_REGISTRY_USERNAME`     | secrets  |`your-github-username`      | GitHub username associated with the PAT.               |
-| `CONTAINER_REGISTRY_PASSWORD`     | secrets  |`ghp_xxxxxxxxxxxxxxxxxxxx`  | GitHub Personal Access Token (PAT).                    |
+For local development, access to GitHub Container Registry requires authentication using a Personal Access Token (PAT) with at least `read:packages` permissions. This token must be 
+used to log in to the registry (e.g. via `docker login`), enabling Docker to pull private images from repositories within your organization.
 
-> ⚠️ These values are also required during Kubernetes deployment. Ensure they are recorded securely and made available to deployment pipelines.
-
-It is also possible to use GitHub Actions built-in authentication:
-
-| Option      | Value                           |
-| ----------- | ------------------------------- |
-| Username    | `${{ github.actor }}`           |
-| Password    | `${{ secrets.GITHUB_TOKEN }}`   |
-
-> ⚠️ When using this approach, the repository must be explicitly linked to the container package on GitHub using `CONTAINER_REGISTRY_SOURCE_LABEL` for proper access control.
+> ⚠️ The repository must be linked to the container package via `CONTAINER_REGISTRY_SOURCE_LABEL` to ensure proper access control. This is preconfigured for all Nano applications.
