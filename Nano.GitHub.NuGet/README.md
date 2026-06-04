@@ -11,18 +11,16 @@
 ## Summary
 A private NuGet registry is a core requirement for maintaining a controlled, scalable, and efficient codebase.
 
-Nano relies on a private NuGet server to distribute internal packages across services and libraries, ensuring consistent dependency management and secure access to 
-proprietary components.
+Nano relies on a private NuGet server to distribute internal packages across services and libraries, ensuring consistent dependency management and secure access to proprietary 
+components.
 
 ## Configuration
-To configure private NuGet package hosting using GitHub Packages, follow the **[official documentation](https://docs.github.com/en/packages/working-with-a-github-packages-registry/working-with-the-nuget-registry)**.  
+Private NuGet package hosting with GitHub Packages works out of the box when using GitHub Actions and the built-in `GITHUB_TOKEN`, which already provides the required authentication 
+for publishing and consuming packages within your organization. For additional context on how GitHub Packages NuGet authentication works and the supported scenarios, see the 
+**[official documentation](https://docs.github.com/en/packages/working-with-a-github-packages-registry/working-with-the-nuget-registry)**.
 
-Nano requires the following organization secrets to be defined for applications publishing NuGet packages.  
+> ⚠️ Be aware: consuming NuGet packages across repositories requires explicit access permissions. The package repository must grant access to the consuming workflow repository 
+in order for restores to succeed within the organization.
 
-| Variable         | Type     | Value                                                    | Description                                      |
-| ---------------- | -------- | -------------------------------------------------------- |------------------------------------------------- |
-| `NUGET_HOST`     | secrets  | `https://nuget.pkg.github.com/{{org-name}}/index.json`   | URL to the GitHub NuGet package registry         |
-| `NUGET_APIKEY`   | secrets  | `ghp_xxxxxxxxxxxxxxxxxxxx`                               | GitHub Personal Access Token (PAT)               |
-| `NUGET_USERNAME` | secrets  | `your-github-username`                                   | GitHub username associated with the PAT          |
-
-All variables must be configured as GitHub repository or organization secrets.  
+For local development in Visual Studio, access to GitHub NuGet packages requires a Personal Access Token (PAT) with at least `read:packages` permissions. This token must be configured 
+as the authentication method for the GitHub NuGet feed, allowing Visual Studio to authenticate and restore packages from private repositories within your organization.
