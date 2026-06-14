@@ -39,6 +39,7 @@ Follow these steps to create a GitHub App with the required permissions to run G
 4. With webhooks disabled, no event subscriptions are needed. Leave the _Subscribe to events_ section empty (this is the default).  
 5. Under Permissions ➔ Repository Permissions, grant:  
    - Actions: Read & Write (required for runner queue monitoring and registration).  
+   - Packages: Read (required for Kubernetes `ghcr-pull-secret` to pull container image from GHCR), 
    - Metadata: Read-only (default).  
 6. Under Permissions ➔ Organization Permissions, grant:  
    - Self-hosted runners: Read & Write.  
