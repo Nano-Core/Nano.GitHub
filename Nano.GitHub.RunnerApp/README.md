@@ -33,7 +33,7 @@ To configure the GitHub App follow the steps below.
 Follow these steps to create a GitHub App with the required permissions to run GitHub Actions workflows.
 
 1. Go to Organization Settings ➔ Developer Settings ➔ GitHub Apps ➔ New GitHub App.  
-2. Give it a name (e.g., `nano-github-runner-provisioner`) and set the required Homepage URL to anything valid (e.g., your org URL).  
+2. Give it a name (e.g., `nano-deployment-agent`) and set the required Homepage URL to anything valid (e.g., your org URL).  
 3. Scroll to the Webhooks section at the bottom of the app page and uncheck _Active_ to disable webhooks. 
    KEDA in Azure Container Apps does not require GitHub webhooks because it polls the GitHub API at intervals to check for queued work.  
 4. With webhooks disabled, no event subscriptions are needed. Leave the _Subscribe to events_ section empty (this is the default).  
