@@ -46,7 +46,7 @@ Follow these steps to create a GitHub App with the required permissions to run G
 7. Under _Where can this GitHub App be installed?_, select _Only on this account_ (default). This restricts the app to your organization and prevents external installations.  
 8. Click _Create the app_.  
 
-> ⚠️ The GitHub runner uses the **Default Runner Group**. If it should be available to public repositories, you must enable this manually in Organization Settings ➔ Actions ➔ Runner Groups ➔ Default, then select **Allow public repositories**.
+> ⚠️ The GitHub runner uses the _Default Runner Group_. If it should be available to public repositories, you must enable this manually in Organization Settings ➔ Actions ➔ Runner Groups ➔ Default, then select **Allow public repositories**.
 
 ### Generate a Private Key
 After creating the GitHub App, generate a private key:
