@@ -9,7 +9,6 @@
 
 ### Documentation
 &nbsp;&nbsp;&nbsp;&nbsp;🔹 **[Nano.GitHub.NuGet](https://github.com/Nano-Core/Nano.GitHub/tree/master/Nano.GitHub.NuGet)**  
-&nbsp;&nbsp;&nbsp;&nbsp;🔹 **[Nano.GitHub.ContainerRegistry](https://github.com/Nano-Core/Nano.GitHub/tree/master/Nano.GitHub.ContainerRegistry)**  
 &nbsp;&nbsp;&nbsp;&nbsp;🔹 **[Nano.GitHub.RunnerApp](https://github.com/Nano-Core/Nano.GitHub/tree/master/Nano.GitHub.RunnerApp)**  
 
 ## Summary
