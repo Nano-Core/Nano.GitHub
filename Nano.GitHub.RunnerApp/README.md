@@ -23,7 +23,7 @@ scoped at the organization level and is used to authorize and manage workflow ex
 
 For enterprise organization structures, the industry standard to create a dedicated GitHub App inside your organization. 
 
-The **[Nano.Azure.Kubernetes.GitHubRunner](https://github.com/Nano-Core/Nano.Azure.Kubernetes/tree/master/Nano.Azure.Kubernetes.GitHubRunner/README.md#nanoazurekubernetesgithubrunner)** 
+The **[Nano.Azure.GitHubRunner](https://github.com/Nano-Core/Nano.Azure/blob/master/Nano.Azure.GitHubRunner/README.md#nanoazuregithubrunner)** 
 underlying scaling engine (KEDA) natively supports GitHub App authentication using an App ID, an Installation ID, and a Private Key (.pem file). 
 
 ## Configuration
@@ -64,7 +64,7 @@ Next, the app must be installed in your organization so it can access the requir
 ### GitHub Secrets
 Add the following GitHub organization secrets.  
 
-These are required later for deploying **[Nano.Azure.Kubernetes.GitHubRunner](https://github.com/Nano-Core/Nano.Azure.Kubernetes/tree/master/Nano.Azure.Kubernetes.GitHubRunner/README.md#nanoazurekubernetesgithubrunner)**, 
+These are required later for deploying **[Nano.Azure.GitHubRunner](https://github.com/Nano-Core/Nano.Azure/blob/master/Nano.Azure.GitHubRunner/README.md#nanoazuregithubrunner)**, 
 which uses the GitHub App for authentication.  
 
 | Secret                          | Type     | Description                                                                                                           |
