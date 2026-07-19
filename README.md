@@ -1,6 +1,6 @@
 # Nano.GitHub
 
-> _Required GitHub components for Nano._
+> _Required GitHub components for Nano._ 
 
 ***
 
