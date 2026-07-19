@@ -1,15 +1,15 @@
 # Nano.GitHub
 
-> _Required GitHub components for Nano._
+> _Required GitHub components for Nano._ 
 
 ***
 
 ## Table of Contents
-&nbsp;&nbsp;&nbsp;&nbsp;📌 **[Summary](#-summary)**
+&nbsp;&nbsp;&nbsp;&nbsp;📌 **[Summary](#summary)**
 
 ### Documentation
-&nbsp;&nbsp;&nbsp;&nbsp;🔹 **[Nano.GitHub.NuGet](https://github.com/Nano-Core/Nano.GitHub/tree/master/Nano.GitHub.NuGet)**  
-&nbsp;&nbsp;&nbsp;&nbsp;🔹 **[Nano.GitHub.RunnerApp](https://github.com/Nano-Core/Nano.GitHub/tree/master/Nano.GitHub.RunnerApp)**  
+&nbsp;&nbsp;&nbsp;&nbsp;🔹 **[Nano.GitHub.NuGet](https://github.com/Nano-Core/Nano.GitHub/blob/master/Nano.GitHub.NuGet#nanogithubnuget)**  
+&nbsp;&nbsp;&nbsp;&nbsp;🔹 **[Nano.GitHub.RunnerApp](https://github.com/Nano-Core/Nano.GitHub/blob/master/Nano.GitHub.RunnerApp#nanogithubrunnerapp)**  
 
 ## Summary
 Establishing a reliable and scalable .NET development workflow on Kubernetes requires a well-configured GitHub foundation.
