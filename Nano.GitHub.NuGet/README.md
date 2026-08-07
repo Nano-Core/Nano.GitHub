@@ -32,5 +32,7 @@ For local development in Visual Studio, add a new NuGet package source using the
 When prompted for credentials, enter your GitHub username and use a Personal Access Token (PAT) as the password. The PAT must have at least the `read:packages` permission to authenticate 
 and restore packages from private GitHub repositories.
 
+> ⚠️ If Visual Studio continuously prompts for credentials, make sure the username does _not_ include the GitHub NuGet host: `https://nuget.pkg.github.com/{org-name}/` as a prefix.
+
 > ⚠️ If the GitHub NuGet password prompt does not appear and you only see "An error occurred" when listing packages, Visual Studio may be using cached or conflicting credentials. Check 
 Windows Credential Manager, remove any conflicting NuGet/GitHub entries, close Visual Studio, delete the .vs folder, and refresh the package list. The login prompt should then appear.
